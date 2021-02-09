@@ -3,7 +3,6 @@ import AppRouter from './routers/AppRouter'
 
 export const ParkingApp = () => {
     return (
-        
         <AppRouter/>
     )
 }
