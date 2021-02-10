@@ -2,7 +2,7 @@ import React from 'react'
 
 export const RowTable = () => {
     return (
-        <div className="home__table-row">
+        <div className="home__table-row pointer">
             <div>8:30</div>
             <div>8</div>
             <div>Disponible</div>
