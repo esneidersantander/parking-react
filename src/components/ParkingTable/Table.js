@@ -12,28 +12,12 @@ export const Table = () => {
         }
       }, []);
 
-/*     const getParking = async ()=>{
-        const url = 'http://localhost:3000/parkings';
-        console.log(setParkings);
-        try {
-            const resp = await fetch (url)
-            if (resp.ok) {
-                const data = await resp.json();
-                setParkings(data)
-            }else{
-                throw await resp.json();
-            }
-        } catch (error) {
-            throw error;
-        }
-    } */
-    console.log(parkings);
     return (
         <>
             {
                 parkings&&
                     parkings.map(x=>{
-                        return <RowTable key={x.id} value={x}/>
+                        return <RowTable key={x.id} {...x}/>
                     })
                 
             }

@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const RowTable = () => {
+export const RowTable = ({id, time, available}) => {
     return (
         <div className="home__table-row pointer">
-            <div>8:30</div>
-            <div>8</div>
+            <div>{time}</div>
+            <div>{available}</div>
             <div>Disponible</div>
         </div>
     )
