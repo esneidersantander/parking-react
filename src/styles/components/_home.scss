@@ -1,0 +1,21 @@
+.home__main-content{
+    align-items: center;
+    align-content: center;
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.home__table-header{
+    background-color: white;
+    border-radius: 5px;
+    border-color: $dark-grey;
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 25px;
+    width: 60%;
+}
