@@ -3,13 +3,15 @@ export const postUser = async (name)=>{
     try {
         const resp = await fetch (url, {
             method:'POST',
-            body:{
+            headers: { 'Content-Type': 'application/json' },
+            body:JSON.stringify({
                 name:name,
                 parkings:[]
-            }
+            })
         })
         if (resp.ok) {
             const data = await resp.json();
+            console.log(data);
             return data;
         }else{
             throw await resp.json();

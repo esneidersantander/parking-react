@@ -8,9 +8,15 @@ export const Table = () => {
     
     useEffect(() => {
         if (!parkings) {
-            getParking(setParkings);
+            loadParking();
         }
-      }, []);
+    }, []);
+
+
+    const loadParking = async ()=>{
+        const data = await getParking();
+        setParkings(data);
+    }
 
     return (
         <>

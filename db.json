@@ -4,6 +4,11 @@
       "id": 1,
       "name": "juan",
       "parkings": []
+    },
+    {
+      "name": "jose",
+      "parkings": [],
+      "id": 2
     }
   ],
   "parkings": [

@@ -10,27 +10,33 @@ export const LoginScreen = () => {
     
     const {user, setUser} = useContext(UserContext);
 
-    
-
 
     const handleLogin = async (e)=>{
         e.preventDefault();
         const users = await getUsers();
-        users.map(auxUser=>{
-            if (auxUser.name===name) {
-                console.log('NO hay que crear un usuario');
-                setUser({
-                    id:auxUser.id,
-                    name:auxUser.name,
-                    parkings: auxUser.parkings
-                })
-            }else{
-                const resp = postUser(name);
-                if (resp) {
-                    console.log('agregado');
-                }
+        const match = users.find(x => x.name === name);
+        if (match) {
+            login(match);
+        }else{
+            const newUser = await postUser(name);
+            login(newUser);
+        }
+    }
+    const login =(user)=>{
+        localStorage.setItem('user', JSON.stringify({
+            logged:true,
+            id:user.id,
+            name:user.name,
+            parkings: user.parkings
+        }))
+        setUser(
+            {
+                logged:true,
+                id:user.id,
+                name:user.name,
+                parkings: user.parkings
             }
-        })
+        )
     }
     return (
         <>
